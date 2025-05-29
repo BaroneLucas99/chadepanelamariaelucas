@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body, html {
+  width: 100%;
+  height: 100%;
+  padding-top: 30px; 
+}
+/* 📱 Em telas menores que 600px*/
+@media (max-width: 600px) {
+  body, html {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px; 
+  }
+}
+/* ⚙️ Corrigindo largura esticada em tablets (modo retrato) */
+@media (min-width: 600px) and (max-width: 1400px) {
+  body, html {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px; 
+  }
+}
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+body, p {
+  font-family: 'Poppins', sans-serif;
+}
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* 📱 Em telas menores que 600px, forçar 1 coluna */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 30px 10px;
+    padding: 0 20px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ⚙️ Corrigindo largura esticada em tablets (modo retrato) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .grid-container {
+    max-width: 700px;
+    padding: 0 20px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Card centralizado com largura limitada */
+.card {
+  background-color: white;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 20px;
+  /*box-shadow: 0.5px 1px 20px rgba(0, 0, 0, 0.3);*/
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  max-width: 400px;   /* evita que fique esticado demais */
+  margin: 0 auto;     /* centraliza o card */
+}
+
+   .card img {
+  width: 100%;             /* Ocupa toda a largura do card */
+  height: auto;            /* Mantém proporção da imagem */
+  max-height: 180px;       /* Limita a altura sem cortar */
+  object-fit: contain;     /* Evita corte e distorção */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+    .card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #444;
+      font-family: montserrat;
+    }
+
+    .card p {
+      font-size: 20px;
+      margin: 5px 0;
+      color: #666;
+      font-family: Merriweather ;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background-color: #fff;
+      color: #e8acd3;
+      border-radius: 8px;
+      border: 1px solid #e8acd3;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-family: montserrat;
+      
+      
+    }
+
+
+    .card a:hover {
+      background-color: #b85796;
+      color: #fff;
+    }
+    .botao-pulsante {
+    animation: pulsar 1.5s infinite;
+    }
+
+    @keyframes pulsar {
+    0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(232, 172, 211, 0.7);
+    }
+    70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(232, 172, 211, 0);
+    }
+    100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(232, 172, 211, 0);
+    }
+    }
+
+
+.secao-titulo {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .secao-titulo {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+  }
+}
+.icone-svg {
+  width: 30px;              /* 👉 Tamanho do ícone */
+  position: absolute;
+  left: 20px;               /* 👉 Alinha com os cards */
+  top: 0;
+}
+
+.secao-titulo h2 {
+  font-family: 'dancing script', serif;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 0 20px 0;       /* 👉 Espaço entre o título e a linha */
+  color: #e8acd3;
+}
+@media (max-width: 600px) {
+  .secao-titulo h2 {
+    font-family: 'dancing script', serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 20px 0;       /* 👉 Espaço entre o título e a linha */
+    color: #e8acd3;
+  }
+}
+
+.secao-titulo .linha {
+  height: 2px;
+  background-color: #eeeeee;
+  width: 100%;
+}
+
+.imagem-container {
+  max-width: 1200px; /* mesma largura do .grid-container */
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.imagem-container img {
+  width: 100%;
+/*  max-width: 600px; /* controla o tamanho máximo da imagem */
+  height: auto;
+}
+.linha-inferior {
+  height: 2px;
+  background-color: #eeeeee; /* ou outra cor desejada */
+  width: 100%;
+  margin: 40px 0;
+}
+.titulo-secundario {
+  text-align: center;
+  font-size: 30px;
+  color: #e8acd3; /* ou qualquer cor que combine com o tema */
+  margin-top: 0px;
+  font-family: 'lora', cursive;
+}
+@media (max-width: 600px) {
+  .titulo-secundario {
+    text-align: center;
+    font-size: 20px;
+    color: #e8acd3; /* ou qualquer cor que combine com o tema */
+    margin-top: 0px;
+    font-family: 'lora', cursive;
+  }
+}
+
+/* ⚙️ Corrigindo largura esticada em tablets (modo retrato) */
+/*@media (min-width: 600px) and (max-width: 1024px) {
+  .grid-container {
+    max-width: 700px;
+    padding: 0 20px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }*/
+.linha-inferior2 {
+  height: 2px;
+  background-color: #eeeeee; /* ou outra cor desejada */
+  width: 100%;
+  margin: 40px 0;
+}
+
+
+
+
+/* Escurece o fundo para destacar o texto */
+.topo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /*background: rgba(0, 0, 0, 0.4);*/
+  z-index: 1;
+}
+
+.topo-conteudo {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.topo h1 {
+  font-size: 60px;
+  margin: 0;
+}
+.rodape {
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #e8acd3;
+}
+
+.rodape-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
