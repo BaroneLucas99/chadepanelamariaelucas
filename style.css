@@ -73,13 +73,12 @@ body, p {
   }
 }
 
-/* Card centralizado com largura limitada */
+
 .card {
   background-color: white;
   border: 1px solid #eeeeee;
   border-radius: 12px;
   padding: 20px;
-  /*box-shadow: 0.5px 1px 20px rgba(0, 0, 0, 0.3);*/
   text-align: center;
 
   display: flex;
@@ -92,10 +91,10 @@ body, p {
 }
 
    .card img {
-  width: 100%;             /* Ocupa toda a largura do card */
-  height: auto;            /* Mantém proporção da imagem */
-  max-height: 180px;       /* Limita a altura sem cortar */
-  object-fit: contain;     /* Evita corte e distorção */
+  width: 100%;            
+  height: auto;            
+  max-height: 180px;       
+  object-fit: contain;     
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -155,34 +154,50 @@ body, p {
     }
 
 
+
 .secao-titulo {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-  position: relative;
+  display: flex;
+  align-items: center;         
+  gap: 20px;          
+  padding: 0px 20px;
+  padding-top: 30px;
+  flex-wrap: wrap;             
+  justify-content: center;     
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
 }
+
+
+
 @media (max-width: 600px) {
   .secao-titulo {
-    max-width: 1200px;
+    width: 100%;
     margin: 0px auto;
     padding: 0 20px;
+    padding-top: 10px;
     text-align: center;
-    position: relative;
+    position: fixed;
   }
 }
 .icone-svg {
-  width: 30px;              /* 👉 Tamanho do ícone */
-  position: absolute;
-  left: 20px;               /* 👉 Alinha com os cards */
-  top: 0;
+  
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
 }
+
+
 
 .secao-titulo h2 {
   font-family: 'dancing script', serif;
   font-size: 40px;
   font-weight: 600;
-  margin: 0 0 20px 0;       /* 👉 Espaço entre o título e a linha */
+  margin: 0;       /* 👉 Espaço entre o título e a linha */
   color: #e8acd3;
 }
 @media (max-width: 600px) {
@@ -190,7 +205,7 @@ body, p {
     font-family: 'dancing script', serif;
     font-size: 30px;
     font-weight: 600;
-    margin: 0 0 20px 0;       /* 👉 Espaço entre o título e a linha */
+    margin: 0;   /* 👉 Espaço entre o título e a linha */
     color: #e8acd3;
   }
 }
@@ -204,7 +219,7 @@ body, p {
 .imagem-container {
   max-width: 1200px; /* mesma largura do .grid-container */
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -219,6 +234,7 @@ body, p {
   width: 100%;
   margin: 40px 0;
 }
+
 .titulo-secundario {
   text-align: center;
   font-size: 30px;
