@@ -1,10 +1,250 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Obrigado pelo Presente!</title><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{background-color:#fff0f5;font-family:Poppins,sans-serif;color:#444;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px;padding-bottom:40px}.container{max-width:600px;width:100%;margin:auto;background-color:#fff;border-radius:16px;padding:40px 30px;box-shadow:0 0 25px rgba(0,0,0,.15)}h1{font-family:'Dancing Script',cursive;font-size:48px;color:#e88ab4;margin-bottom:20px}#mensagem{color:#000;font-family:poppins,sans-serif;text-transform:capitalize}p{font-size:18px;margin-bottom:30px}.btn-voltar{display:inline-block;padding:12px 24px;background-color:#fff;color:#e88ab4;text-decoration:none;border-radius:8px;font-weight:700;transition:background .3s}.btn-voltar:hover{background-color:#b85796}img{width:80px;margin-bottom:20px}.contribuicao{margin-top:10px;background:#fff;padding:20px;border-radius:16px}.contribuicao p{font-size:18px;margin-bottom:12px;color:#444}.valores{display:flex;gap:0;flex-wrap:nowrap;overflow-x:auto;justify-content:center}.meio,.valor-btn{flex:0 0 auto;padding:10px 20px;font-size:16px;border:none;background-color:#fff;cursor:pointer;text-decoration:none;white-space:nowrap}.meio{border-top:2px solid #e88ab4;border-bottom:2px solid #e88ab4;font-family:poppins,sans-serifs;color:#b85796;font-weight:700}.valor-btn{border-top:2px solid #e88ab4;border-bottom:2px solid #e88ab4;font-family:poppins,sans-serifs;color:#b85796;font-weight:700}#btn1{border-radius:20px 0 0 20px;border-top:2px solid #e88ab4;border-bottom:2px solid #e88ab4;border-left:2px solid #e88ab4;border-right:none;padding-left:20px}#btn2{border-radius:0 20px 20px 0;border-top:2px solid #e88ab4;border-bottom:2px solid #e88ab4;border-left:none;border-right:2px solid #e88ab4;padding-right:20px}@media (max-width:600px){.valor-btn{padding:8px 10px;border:2px solid #e88ab4;background:#fff;color:#b85796;font-weight:700;cursor:pointer;transition:background .3s;font-family:poppins,sans-serif;font-size:15px}.meio{padding:8px 10px;border-top:2px solid #e88ab4;border-bottom:2px solid #e88ab4;border-left:none;border-right:none;background:#fff;color:#b85796;font-weight:700;cursor:pointer;transition:background .3s;font-family:poppins,sans-serif;font-size:15px}#btn1{padding-left:12px}#btn2{padding-right:12px}}@media (max-width:480px){h1{font-size:36px}.contribuicao p,p{font-size:16px}.container{padding:30px 17px}}.meio:hover,.valor-btn.selected,.valor-btn:hover{background:#e88ab4;color:#fff}#valorPersonalizado{margin-top:10px;padding:10px;width:100%;border:1px solid #ccc;border-radius:10px}#btnContribuir{margin-top:20px;padding:12px 24px;background-color:#e88ab4;color:#fff;border:none;border-radius:20px;font-weight:700;cursor:pointer;transition:background .3s;font-family:poppins,sans-serif}#btnContribuir:hover{background-color:#b85796}</style></head><body><div class="container"><img src="coracao.svg" alt="Coração"><h1>Obrigado!</h1><h1 id="mensagem"></h1><p>Seu presente foi recebido com carinho 💖<br>Agradecemos muito por sua contribuição!</p><div class="contribuicao"><p>💌 Nos ajude na nossa lua de mel:</p><div class="valores"><a href="https://nubank.com.br/cobrar/2tc5h/6839e805-e5c9-43b4-85ce-819fbce4fb01" class="valor-btn" id="btn1" data-valor="10">R$ 10<a><a href="https://nubank.com.br/cobrar/2tc5h/6839e856-61b5-49f5-9375-3fa33ca2ad53" class="meio" data-valor="20">R$ 20</a><a href="https://nubank.com.br/cobrar/2tc5h/6839e891-bbb1-4445-a173-24897ef7e33d" class="meio" data-valor="30">R$ 30</a><a href="https://nubank.com.br/cobrar/2tc5h/6839e77b-dd6f-4fd5-91d8-625e7d3b00b2" class="valor-btn" id="btn2" data-valor="outro">Outro</a></div><input type="number" id="valorPersonalizado" placeholder="Digite o valor" style="display:none" min="1"></div><a href="lista.html" class="btn-voltar">Voltar para a lista</a></div><script>function getCookie(nome) {
-    const valor = `; ${document.cookie}`;
-    const partes = valor.split(`; ${nome}=`);
-    if (partes.length === 2) return decodeURIComponent(partes.pop().split(';').shift());
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  const nomePessoa = getCookie("nome");
-  if (nome) {
-    document.getElementById("mensagem").textContent = `${nome}`;
-  }</script></body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Obrigado pelo Presente!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background-color: #fff0f5;
+            font-family: Poppins, sans-serif;
+            color: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 40px
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, .15)
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            color: #e88ab4;
+            margin-bottom: 20px
+        }
+
+        #mensagem {
+            color: #000;
+            font-family: poppins, sans-serif;
+            text-transform: capitalize
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #fff;
+            color: #e88ab4;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background .3s
+        }
+
+        .btn-voltar:hover {
+            background-color: #b85796
+        }
+
+        img {
+            width: 80px;
+            margin-bottom: 20px
+        }
+
+        .contribuicao {
+            margin-top: 10px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px
+        }
+
+        .contribuicao p {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #444
+        }
+
+        .valores {
+            display: flex;
+            gap: 0;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: center
+        }
+
+        .meio,
+        .valor-btn {
+            flex: 0 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap
+        }
+
+        .meio {
+            border-top: 2px solid #e88ab4;
+            border-bottom: 2px solid #e88ab4;
+            font-family: poppins, sans-serifs;
+            color: #b85796;
+            font-weight: 700
+        }
+
+        .valor-btn {
+            border-top: 2px solid #e88ab4;
+            border-bottom: 2px solid #e88ab4;
+            font-family: poppins, sans-serifs;
+            color: #b85796;
+            font-weight: 700
+        }
+
+        #btn1 {
+            border-radius: 20px 0 0 20px;
+            border-top: 2px solid #e88ab4;
+            border-bottom: 2px solid #e88ab4;
+            border-left: 2px solid #e88ab4;
+            border-right: none;
+            padding-left: 20px
+        }
+
+        #btn2 {
+            border-radius: 0 20px 20px 0;
+            border-top: 2px solid #e88ab4;
+            border-bottom: 2px solid #e88ab4;
+            border-left: none;
+            border-right: 2px solid #e88ab4;
+            padding-right: 20px
+        }
+
+        @media (max-width:600px) {
+            .valor-btn {
+                padding: 8px 10px;
+                border: 2px solid #e88ab4;
+                background: #fff;
+                color: #b85796;
+                font-weight: 700;
+                cursor: pointer;
+                transition: background .3s;
+                font-family: poppins, sans-serif;
+                font-size: 15px
+            }
+            .meio {
+                padding: 8px 10px;
+                border-top: 2px solid #e88ab4;
+                border-bottom: 2px solid #e88ab4;
+                border-left: none;
+                border-right: none;
+                background: #fff;
+                color: #b85796;
+                font-weight: 700;
+                cursor: pointer;
+                transition: background .3s;
+                font-family: poppins, sans-serif;
+                font-size: 15px
+            }
+            #btn1 {
+                padding-left: 12px
+            }
+            #btn2 {
+                padding-right: 12px
+            }
+        }
+
+        @media (max-width:480px) {
+            h1 {
+                font-size: 36px
+            }
+            .contribuicao p,
+            p {
+                font-size: 16px
+            }
+            .container {
+                padding: 30px 17px
+            }
+        }
+
+        .meio:hover,
+        .valor-btn.selected,
+        .valor-btn:hover {
+            background: #e88ab4;
+            color: #fff
+        }
+
+        #valorPersonalizado {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 10px
+        }
+
+        #btnContribuir {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #e88ab4;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .3s;
+            font-family: poppins, sans-serif
+        }
+
+        #btnContribuir:hover {
+            background-color: #b85796
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"><img src="coracao.svg" alt="Coração">
+        <h1>Obrigado!</h1>
+        <h1 id="mensagem"></h1>
+        <p>Seu presente foi recebido com carinho 💖<br>Agradecemos muito por sua contribuição!</p>
+        <div class="contribuicao">
+            <p>💌 Nos ajude na nossa lua de mel:</p>
+            <div class="valores"><a href="https://nubank.com.br/cobrar/2tc5h/6839e805-e5c9-43b4-85ce-819fbce4fb01" class="valor-btn" id="btn1" data-valor="10">R$ 10<a><a href="https://nubank.com.br/cobrar/2tc5h/6839e856-61b5-49f5-9375-3fa33ca2ad53" class="meio" data-valor="20">R$ 20</a>
+                <a
+                    href="https://nubank.com.br/cobrar/2tc5h/6839e891-bbb1-4445-a173-24897ef7e33d" class="meio" data-valor="30">R$ 30</a><a href="https://nubank.com.br/cobrar/2tc5h/6839e77b-dd6f-4fd5-91d8-625e7d3b00b2" class="valor-btn" id="btn2" data-valor="outro">Outro</a></div><input type="number" id="valorPersonalizado" placeholder="Digite o valor" style="display:none"
+                min="1"></div><a href="lista.html" class="btn-voltar">Voltar para a lista</a></div>
+    <script>
+        function getCookie(nome) {
+            const valor = `; ${document.cookie}`;
+            const partes = valor.split(`; ${nome}=`);
+            if (partes.length === 2) return decodeURIComponent(partes.pop().split(';').shift());
+        }
+
+        const nome = getCookie("nome");
+        if (nome) {
+            document.getElementById("mensagem").textContent = `${nome}`;
+        }
+    </script>
+</body>
+
+</html>
