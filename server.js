@@ -4,11 +4,14 @@ const mercadopago = require('mercadopago');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+require('dotenv').config();
 
-// Configure suas credenciais
+const mercadopago = require('mercadopago');
+
 mercadopago.configure({
-  access_token: 'SUA_ACCESS_TOKEN'
+  access_token: process.env.MP_ACCESS_TOKEN,
 });
+
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -20,22 +23,23 @@ app.post('/criar-preferencia', async (req, res) => {
         {
           title: 'Conjunto de panelas antiaderente',
           quantity: 1,
-          unit_price: 159.63,
+          unit_price: 00.03,
           currency_id: 'BRL'
         }
       ],
       back_urls: {
-        success: 'https://SEUSITE.com/lista.html',
-        failure: 'https://SEUSITE.com/lista.html',
-        pending: 'https://SEUSITE.com/lista.html'
+        success: 'hhttps://baronelucas99.github.io/chadepanelamariaelucas/agradecimento.html',
+        failure: 'https://baronelucas99.github.io/chadepanelamariaelucas/',
+        pending: 'https://baronelucas99.github.io/chadepanelamariaelucas/lista.html'
       },
       auto_return: 'approved'
     };
 
-    const response = await mercadopago.preferences.create(preference);
+   const response = await mercadopago.preferences.create(preference);
     res.json({ id: response.body.id });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.log(error);
+    res.status(500).send("Erro ao criar preferência");
   }
 });
 
