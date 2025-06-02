@@ -20,7 +20,7 @@ app.post('/criar-preferencia', async (req, res) => {
         {
           title: 'Conjunto de panelas antiaderente',
           quantity: 1,
-          unit_price: 159.63,
+          unit_price: 0.03,
           currency_id: 'BRL'
         }
       ],
