@@ -6,8 +6,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 
-const mercadopago = require('mercadopago');
-
 mercadopago.configure({
   access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
 });
