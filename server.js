@@ -26,7 +26,7 @@ app.post('/criar-preferencia', async (req, res) => {
         }
       ],
       back_urls: {
-        success: 'hhttps://baronelucas99.github.io/chadepanelamariaelucas/agradecimento.html',
+        success: 'https://baronelucas99.github.io/chadepanelamariaelucas/agradecimento.html',
         failure: 'https://baronelucas99.github.io/chadepanelamariaelucas/',
         pending: 'https://baronelucas99.github.io/chadepanelamariaelucas/lista.html'
       },
