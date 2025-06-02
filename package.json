@@ -13,6 +13,7 @@
 }
 =======
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0"
   }
 >>>>>>> cf4973a (Atualiza server.js e adiciona dotenv)
