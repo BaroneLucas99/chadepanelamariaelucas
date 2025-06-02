@@ -6,6 +6,7 @@ require('dotenv').config(); // Carrega variáveis do .env
 const app = express();
 app.use(express.json());
 app.use(cors());
+//apenas um teste
 
 // Configura Mercado Pago com token do .env
 mercadopago.configure({
