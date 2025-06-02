@@ -9,7 +9,7 @@ require('dotenv').config();
 const mercadopago = require('mercadopago');
 
 mercadopago.configure({
-  access_token: process.env.MP_ACCESS_TOKEN,
+  access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
 });
 
 
