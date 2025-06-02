@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
 const mercadopago = require('mercadopago');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-require('dotenv').config();
 
 mercadopago.configure({
   access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
 });
-
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -21,7 +20,7 @@ app.post('/criar-preferencia', async (req, res) => {
         {
           title: 'Conjunto de panelas antiaderente',
           quantity: 1,
-          unit_price: 00.03,
+          unit_price: 159.63,
           currency_id: 'BRL'
         }
       ],
@@ -33,7 +32,7 @@ app.post('/criar-preferencia', async (req, res) => {
       auto_return: 'approved'
     };
 
-   const response = await mercadopago.preferences.create(preference);
+    const response = await mercadopago.preferences.create(preference);
     res.json({ id: response.body.id });
   } catch (error) {
     console.log(error);
